@@ -104,7 +104,9 @@ If you're new to open source, here are some resources to help you get started:
     </tr>
   </table>
 </div>
-## ✨ Top Contributors
+
+
+ ## ✨ Top Contributors
 
 Thanks to all our wonderful contributors! Contributions of any kind are welcome! 🚀
 
