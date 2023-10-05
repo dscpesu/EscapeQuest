@@ -6,7 +6,7 @@ I'm happy to welcome all contributions from anyone willing to add new scripts to
 
 ## 💻Before Contributing
 
-Welcome to [SimpleML](https://github.com/dscpesu/SimpleML). Before sending your pull requests, make sure that you **read the whole guidelines**. If you have any doubt about the contributing guide, please feel free to reach out.
+Welcome to [EscapeQuest](https://github.com/dscpesu/EscapeQuest). Before sending your pull requests, make sure that you **read the whole guidelines**. If you have any doubt about the contributing guide, please feel free to reach out.
 
 ## 🙌Contribution
 
@@ -19,11 +19,11 @@ Following are the steps to guide you:
 - Step 1: Fork the repo and Go to your Git terminal and clone it on your machine.
 - Step 2: Add an upstream link to the main branch in your cloned repo
   ```
-  git remote add upstream https://github.com/dscpesu/SimpleML.git
+  git remote add upstream https://github.com/dscpesu/EscapeQuest.git
   ```
 - Step 3: Keep your cloned repo up to date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)
   ```
-  git pull upstream main https://github.com/dscpesu/SimpleML.git
+  git pull upstream main https://github.com/dscpesu/EscapeQuest.git
   ```
 - Step 4: Create your feature branch (This is a necessary step, so don't skip it)
   ```
@@ -43,7 +43,7 @@ Following are the steps to guide you:
 
 > - Do not edit/delete someone else's code in this repository. You can only insert new files/folders in this repository.
 
-> - Give a meaningful name to whatever file or folder you are adding. (For example, if you have written an AI code on Loan Prediction, then `loan_prediction.ipynb` is one example of a valid name)
+> - Give a meaningful name to whatever object or script you are adding to scene or the project. 
 
 ## 🔑Guidelines
 
@@ -70,7 +70,7 @@ Following are the steps to guide you:
 ### 🧲Pull Requests Review Criteria
 
 1. Please fill the **[PR Template]** properly while making a Pull Request.
-2. You must add your code `.ipynb` file into the respective **folders**.
+2. You must add  `objects`  into the respective **folders**.
 3. Your work must be original, written by you, not copied from other resources.
 4. You must comment on your code where necessary.
 5. For frontend changes, kindly share screenshots and work samples of your work before sending a PR.
@@ -81,18 +81,12 @@ Following are the steps to guide you:
 
 We want your work to be readable by others; therefore, we encourage you to note the following:
 
-- If Titanic Survival Prediction is submitted, for example, the Folder Name should be "Titanic Survival Prediction," and the File Name should be "titanic_survival_prediction.ipynb."
-- File extension for code should be `.ipynb`.
-- Strictly use snake_case (underscore_separated) in your file_name, as it will be easy to parse in the future using scripts.
-- Please avoid creating new directories if at all possible. Try to fit your work into the existing directory structure you have created for your project. If you want to, please contact before doing so.
-- The basic project folder should have 2 repositories: Dataset and Model. Dataset should have the related dataset files for the project to work, and Model should have the program file and other related files concerning the project for AI, Deep learning, Computer Vision, NLP enthusiasts.
+- Please avoid creating new directories if at all possible. Try to fit your work into the existing directory structure you have created for your project.
 - The [README.md] file should be concise and clear about what the project is about and what it does.
 - It should be documented briefly enough to let readers understand.
 - If you have modified/added code work, make sure that the algorithm works before submitting.
 - If you have modified/added documentation work, ensure your language is concise and contains no grammar errors.
-- For front-end designers, back-end developers, and UI/UX designers, follow the project structure mentioned in [README]
 - Do not update the [README.md] and [Contributing_Guidelines.md].
-- Avoid importing external libraries for basic algorithms. Only use those libraries for complicated algorithms. **Usage of NumPY is highly recommended.**
 
 ## 📖Resources
 
