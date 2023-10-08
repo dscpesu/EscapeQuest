@@ -69,9 +69,9 @@ Following are the steps to guide you:
 
 ### 🧲Pull Requests Review Criteria
 
-1. Please fill the **[PR Template]** properly while making a Pull Request.
+1. Please have a proper description while making a Pull Request.
 2. You must add  `objects`  into the respective **folders**.
-3. Your work must be original, written by you, not copied from other resources.
+3. Your work must be original, written by you, or it can be free assets.
 4. You must comment on your code where necessary.
 5. For frontend changes, kindly share screenshots and work samples of your work before sending a PR.
 6. Follow the proper [style guides](https://google.github.io/styleguide/) for your work.
