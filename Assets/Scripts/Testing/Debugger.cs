@@ -6,6 +6,6 @@ public class Debugger : MonoBehaviour
 {
    public void DebugLog()
     {
-        Debug.Log("Entered");
+        Debug.Log("Button Press");
     }
 }
