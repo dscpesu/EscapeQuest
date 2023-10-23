@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3378242550266225411}
   - component: {fileID: 2319528638044093426}
   - component: {fileID: 7303530908300058489}
+  - component: {fileID: 5591635834685838917}
   m_Layer: 0
   m_Name: HandleInteractable
   m_TagString: Untagged
@@ -143,7 +144,19 @@ MonoBehaviour:
   defaultValue: 0
   OnValueChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5591635834685838917}
+        m_TargetAssemblyTypeName: DoorHandle, Assembly-CSharp
+        m_MethodName: HandleDoorHandle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &2319528638044093426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -186,6 +199,19 @@ FixedJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5591635834685838917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485060549227783159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727ccad4fed1aed48ad59cdc5ae36fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 1945927105110254166}
 --- !u!1 &8620956788708853419
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7365989621027222507}
   m_Layer: 0
-  m_Name: Door 2
+  m_Name: InteractableDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8195546705868818823, guid: c58431a4bf107474bb78ceb5ae64f055,
+        type: 3}
+      propertyPath: m_Limits.max
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7652868871656842308, guid: c58431a4bf107474bb78ceb5ae64f055, type: 3}
@@ -323,6 +354,12 @@ PrefabInstance:
 --- !u!4 &1747816489451381876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 868401320875706103, guid: c58431a4bf107474bb78ceb5ae64f055,
+    type: 3}
+  m_PrefabInstance: {fileID: 1462635995560616579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1945927105110254166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1102539494456918229, guid: c58431a4bf107474bb78ceb5ae64f055,
     type: 3}
   m_PrefabInstance: {fileID: 1462635995560616579}
   m_PrefabAsset: {fileID: 0}

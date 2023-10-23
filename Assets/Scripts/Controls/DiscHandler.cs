@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class DiscHandler : MonoBehaviour
 {
-    [SerializeField]
-    GameObject diskAttach;
+    
 
     [SerializeField]
     Transform diskTransform;
@@ -19,8 +20,9 @@ public class DiscHandler : MonoBehaviour
     private float speed = 0.5f;
 
 
-    public void IntakeDisk()
+    public void IntakeDisk(SelectEnterEventArgs eventArgs)
     {
+        eventArgs.interactable.GetComponent<CDInfo>().written = true;
         _readDisk = true;
     }
 
