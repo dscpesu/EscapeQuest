@@ -19,13 +19,32 @@ public class NumpadHandler : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
+    [SerializeField]
+    GameObject doorObject;
+
+    [SerializeField]
+    GameObject doorHandle;
 
     string code = "";
+
+    HingeJoint _hingeJoint;
+    XRKnob xrKnob;
 
     private void Start()
     {
         if(audioSource==null)
         audioSource = GetComponent<AudioSource>();
+
+
+        xrKnob = doorHandle.GetComponent<XRKnob>();
+        xrKnob.maximum = 15;
+
+        _hingeJoint = doorObject.GetComponent<HingeJoint>();
+        JointLimits jointLimit = _hingeJoint.limits;
+        jointLimit.max = 0;
+        _hingeJoint.limits = jointLimit;
+
+
     }
 
     public void HandleButtonPress(int buttonValue)
@@ -54,8 +73,6 @@ public class NumpadHandler : MonoBehaviour
         
         if(audioSource!=null)
         {
-            
-            //audioSource.pitch = Mathf.Abs(value / 10);
             audioSource.Play();
         }
     }
@@ -69,12 +86,18 @@ public class NumpadHandler : MonoBehaviour
     {
         if (code == passcode)
         {
-            Debug.Log("True");
+      
             if(bulbObject!=null)
             {
                 bulbObject.GetComponent<ChangeMaterial>().SetOtherMaterial();
             }
-            //What to do
+                xrKnob.maximum = 90;
+            _hingeJoint.useMotor = true;
+            JointLimits jointLimit = _hingeJoint.limits;
+
+            jointLimit.max = 130;
+            _hingeJoint.limits = jointLimit;
+
         }
         else
         {
