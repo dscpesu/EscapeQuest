@@ -1132,7 +1132,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8342173717852460372}
         m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
         m_MethodName: IntakeDisk
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1176,7 +1176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151184032b588474db439f6bde5653d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diskAttach: {fileID: 0}
   diskTransform: {fileID: 9011380464966301833}
 --- !u!1 &1774914498935955227
 GameObject:

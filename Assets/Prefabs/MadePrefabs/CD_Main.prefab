@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93da8547633111b45afaf4a17ca75d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  written: 1
+  written: 0
   videoClip: {fileID: 32900000, guid: 8acccbb5573be4a4eb5984aeb043caef, type: 3}
 --- !u!1 &5898504154023988358
 GameObject:
