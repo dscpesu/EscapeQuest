@@ -86,10 +86,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8342173717852460372}
+        m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
+        m_MethodName: IncreaseBatteryPower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8342173717852460372}
+        m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
+        m_MethodName: DecreaseBatteryPower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -1349,6 +1373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diskTransform: {fileID: 9011380464966301833}
+  upperRadio: {fileID: 1974952298034369633}
+  lowerRadio: {fileID: 6921370016801832298}
 --- !u!1 &1706918872896077575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,10 +1461,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8342173717852460372}
+        m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
+        m_MethodName: IncreaseBatteryPower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8342173717852460372}
+        m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
+        m_MethodName: DecreaseBatteryPower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -1913,7 +1963,7 @@ Transform:
   m_GameObject: {fileID: 2275277586241156779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02220215, y: 0.08866045, z: -0.14586756}
+  m_LocalPosition: {x: 0.024, y: 0.08866045, z: -0.1459}
   m_LocalScale: {x: 0.1704813, y: 0.08800326, z: 0.24986106}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2307,6 +2357,7 @@ GameObject:
   - component: {fileID: 5971932776070173047}
   - component: {fileID: 1210471311052130359}
   - component: {fileID: 3919341907526968740}
+  - component: {fileID: 5759447570852914061}
   m_Layer: 0
   m_Name: slider
   m_TagString: Untagged
@@ -2324,7 +2375,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.17870195, y: -0.16977318, z: -0.009806818}
+  m_LocalScale: {x: 0.178702, y: 0.16977322, z: 0.009806821}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2783566174472748127}
@@ -2407,6 +2458,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5759447570852914061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778484292267540555}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000005, y: 1.9999998, z: 4.1894536}
+  m_Center: {x: -0.00000071525574, y: 0.00000047683716, z: -1.0947533}
 --- !u!1 &3874953076870702723
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,6 +2490,7 @@ GameObject:
   - component: {fileID: 3348601022562570484}
   - component: {fileID: 7878995824098916514}
   - component: {fileID: 8671315500325126607}
+  - component: {fileID: 1974952298034369633}
   m_Layer: 0
   m_Name: display2
   m_TagString: Untagged
@@ -2468,7 +2541,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -528576114869002204, guid: a4763999418dbd747be9b77f905f9905, type: 3}
+  - {fileID: 2100000, guid: 284c0adf047530442a7e23b4365615aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2490,6 +2563,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1974952298034369633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3874953076870702723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efd09f44c334cc45abf43175b085d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherMaterial: {fileID: 2100000, guid: 2bbb6dc6dadb3284e8ee14abb21af440, type: 2}
 --- !u!1 &4085922491619665831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,6 +3847,7 @@ GameObject:
   - component: {fileID: 425345952403354302}
   - component: {fileID: 690098347933492179}
   - component: {fileID: 3817965190962943039}
+  - component: {fileID: 6921370016801832298}
   m_Layer: 0
   m_Name: freqdisplay
   m_TagString: Untagged
@@ -3811,8 +3898,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8440297279596670809, guid: a4763999418dbd747be9b77f905f9905, type: 3}
-  - {fileID: -528576114869002204, guid: a4763999418dbd747be9b77f905f9905, type: 3}
+  - {fileID: -3846018093981099296, guid: dbb37c37300276049979914ee2cf86e9, type: 3}
+  - {fileID: 2100000, guid: 284c0adf047530442a7e23b4365615aa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3834,6 +3921,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6921370016801832298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167094745690843227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9068473d6c7f3aa48a5b4e514e436a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherMaterial: {fileID: 2100000, guid: 2bbb6dc6dadb3284e8ee14abb21af440, type: 2}
 --- !u!1 &7286523649163355462
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,7 +4529,19 @@ MonoBehaviour:
   defaultValue: 0
   OnValueChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8342173717852460372}
+        m_TargetAssemblyTypeName: DiscHandler, Assembly-CSharp
+        m_MethodName: SliderOnChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1072452899680927834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4447,7 +4559,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.35465738, y: 0.3867769, z: 0.05721689}
   m_Center: {x: 0.011526942, y: 0.003715903, z: -0.0029186755}

@@ -10,7 +10,12 @@ public class DiscHandler : MonoBehaviour
 
     [SerializeField]
     Transform diskTransform;
+    [SerializeField]
+    ChangeMaterial upperRadio;
+    [SerializeField]
+    UpdateChangeMaterial lowerRadio;
 
+    private bool active = false;
 
     private bool _readDisk = false;
     private bool _diskReadOnce = false;
@@ -19,6 +24,41 @@ public class DiscHandler : MonoBehaviour
     private float bound = 0.3f;
     private float speed = 0.5f;
 
+    private int battreyPower = 0;
+
+    public void SliderOnChange(float val)
+    {
+
+        if(val>=0.9 && battreyPower==2 )
+        {
+            active = true;
+            upperRadio.SetOtherMaterial();
+            lowerRadio.SetOtherMaterial();
+        }
+        else
+        {
+            active = false;
+            upperRadio.SetOriginalMaterial();
+            lowerRadio.SetOriginalMaterial();
+        }
+    }
+
+    public void IncreaseBatteryPower()
+    {
+        if(battreyPower<2)
+        {
+            battreyPower++;
+        }
+    }
+
+    public void DecreaseBatteryPower()
+    {
+        if (battreyPower > 0 )
+        {
+            battreyPower--;
+      
+        }
+    }
 
     public void IntakeDisk(SelectEnterEventArgs eventArgs)
     {
@@ -44,7 +84,7 @@ public class DiscHandler : MonoBehaviour
 
     private void Update()
     {
-        if(_readDisk &&  !_diskReadOnce)
+        if(active && _readDisk &&  !_diskReadOnce)
         {
             diskTransform.Translate(new Vector3(0.3f * speed * Time.deltaTime, 0, 0),Space.Self);
 
@@ -57,7 +97,7 @@ public class DiscHandler : MonoBehaviour
             }
         }
 
-        if(_outDisk)
+        if(_outDisk && active)
         {
             diskTransform.Translate(new Vector3( -speed * Time.deltaTime, 0, 0), Space.Self);
             if(diskTransform.localPosition.x<=0)

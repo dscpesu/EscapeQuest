@@ -10,22 +10,17 @@ public class ClockAction : MonoBehaviour
     [SerializeField] bool startsWithBattery;
 
     [SerializeField] float clockDuration=1;
-    void Start()
-    {
-        if(startsWithBattery)
-        {
-            StartClock();
-        }
-    }
+   
+    
 
-    private void StartClock()
+    public void StartClock()
     {
         InvokeRepeating("TickSecond", 0.0f, clockDuration);
         InvokeRepeating("TickMinute", 60.0f, clockDuration * 60);
         InvokeRepeating("TickHour", 0.0f, clockDuration * 3600);
     }
 
-    private void StopClock()
+    public void StopClock()
     {
         CancelInvoke();
     }
@@ -53,6 +48,7 @@ public class ClockAction : MonoBehaviour
         hourHand.Rotate(0, (float)(currentHour), 0, Space.Self);
 
     }
+
 
 
 }
