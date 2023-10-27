@@ -9,5 +9,6 @@ public class CDInfo : MonoBehaviour
     public bool written = true; 
     // a video file to be stored here 
     public VideoClip videoClip;
+    public AudioClip audioClip;
 
 }

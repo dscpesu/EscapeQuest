@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4796724270860192941}
   - component: {fileID: 4030299791227817600}
   - component: {fileID: 5419394522172447733}
-  - component: {fileID: 893505697736508080}
+  - component: {fileID: 8528587429963488186}
   - component: {fileID: 5906835673547711622}
   - component: {fileID: 4431108315668396084}
   - component: {fileID: 7618041690878036218}
@@ -33,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.50027484, y: 0.50027484, z: 0.499725, w: 0.499725}
   m_LocalPosition: {x: 0.334, y: 0.0794, z: -0.1324105}
-  m_LocalScale: {x: 0.01121009, y: 0.035398226, z: 0.01121009}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.014692004, y: 0.046393108, z: 0.014692004}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90.063, z: 90}
@@ -90,8 +90,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &893505697736508080
-SphereCollider:
+--- !u!136 &8528587429963488186
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -108,9 +108,11 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.0314115
-  m_Center: {x: -6.8155565e-10, y: 0.0037689207, z: -0.0005201105}
+  serializedVersion: 2
+  m_Radius: 1.1373291
+  m_Height: 2.53451
+  m_Direction: 1
+  m_Center: {x: 6.045033e-16, y: 0.07709397, z: -0.13809104}
 --- !u!114 &5906835673547711622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +135,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -148,7 +150,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 2
 --- !u!114 &7618041690878036218
 MonoBehaviour:
