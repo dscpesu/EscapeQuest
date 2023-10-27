@@ -20,6 +20,12 @@ public class NumpadHandler : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField]
+    AudioSource successFailure;
+
+    [SerializeField]
+    AudioClip success, failure;
+
+    [SerializeField]
     GameObject doorObject;
 
     [SerializeField]
@@ -86,7 +92,9 @@ public class NumpadHandler : MonoBehaviour
     {
         if (code == passcode)
         {
-      
+
+            successFailure.clip = success;
+            successFailure.Play();
             if(bulbObject!=null)
             {
                 bulbObject.GetComponent<ChangeMaterial>().SetOtherMaterial();
@@ -101,7 +109,9 @@ public class NumpadHandler : MonoBehaviour
         }
         else
         {
-            Debug.Log("False");
+            successFailure.clip = failure;
+            successFailure.Play();
+
             bulbObject.GetComponent<ChangeMaterial>().SetOriginalMaterial();
         }
         code = "";

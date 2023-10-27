@@ -8,10 +8,13 @@ public class DiskReaderHandler : MonoBehaviour
 {
     public GameObject tvScreen;
     private VideoPlayer videoPlayer;
+    private AudioSource audioPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         videoPlayer = tvScreen.GetComponent<VideoPlayer>();
+        audioPlayer = tvScreen.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,8 +29,17 @@ public class DiskReaderHandler : MonoBehaviour
         if (written)
         {
             VideoClip cdVideo = cd.GetComponent<CDInfo>().videoClip;
+            if(cdVideo)
+            {
             videoPlayer.clip = cdVideo;
             videoPlayer.Play();
+            }
+            else
+            {
+                AudioClip cdAudio = cd.GetComponent<CDInfo>().audioClip;
+                audioPlayer.clip = cdAudio;
+                audioPlayer.Play();
+            }
             
         }
         
@@ -36,6 +48,7 @@ public class DiskReaderHandler : MonoBehaviour
     public void Eject(SelectExitEventArgs eventArgs)
     {
         videoPlayer.Stop();
+        audioPlayer.Stop();
     }
 
     

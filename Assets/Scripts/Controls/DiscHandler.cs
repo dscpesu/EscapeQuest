@@ -15,6 +15,9 @@ public class DiscHandler : MonoBehaviour
     [SerializeField]
     UpdateChangeMaterial lowerRadio;
 
+    [SerializeField]
+    AudioSource radio;
+
     private bool active = false;
 
     private bool _readDisk = false;
@@ -26,6 +29,8 @@ public class DiscHandler : MonoBehaviour
 
     private int battreyPower = 0;
 
+
+
     public void SliderOnChange(float val)
     {
 
@@ -34,12 +39,20 @@ public class DiscHandler : MonoBehaviour
             active = true;
             upperRadio.SetOtherMaterial();
             lowerRadio.SetOtherMaterial();
+            if(radio)
+            {
+                radio.Play();
+            }
         }
         else
         {
             active = false;
             upperRadio.SetOriginalMaterial();
             lowerRadio.SetOriginalMaterial();
+            if(radio)
+            {
+                radio.Stop();
+            }
         }
     }
 
