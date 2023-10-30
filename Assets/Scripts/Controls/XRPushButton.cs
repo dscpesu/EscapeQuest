@@ -6,9 +6,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Unity.XRContent.Interaction
 {
+    enum Direction
+    {
+        x=0,
+        y,
+        z
+    }
     /// <summary>
     /// An interactable that can be pushed by a direct interactor's movement
     /// </summary>
+    /// 
+
     public class XRPushButton : XRBaseInteractable
     {
         class PressInfo
@@ -44,6 +52,8 @@ namespace Unity.XRContent.Interaction
         [SerializeField]
         [Tooltip("Treat this button like an on/off toggle")]
         bool m_ToggleButton = false;
+
+        
 
         [SerializeField]
         [Tooltip("Events to trigger when the button is pressed")]
@@ -94,6 +104,9 @@ namespace Unity.XRContent.Interaction
         /// </summary>
         public ValueChangeEvent OnValueChange => m_OnValueChange;
 
+        
+
+        IXRSelectInteractor m_Interactor;
         /// <summary>
         /// Whether or not a toggle button is in the locked down position
         /// </summary>
@@ -112,7 +125,7 @@ namespace Unity.XRContent.Interaction
                     SetButtonHeight(0.0f);
             }
         }
-
+       
         public override bool IsHoverableBy(IXRHoverInteractor interactor)
         {
             if (interactor is XRRayInteractor)
@@ -138,12 +151,16 @@ namespace Unity.XRContent.Interaction
 
             hoverEntered.AddListener(StartHover);
             hoverExited.AddListener(EndHover);
+            selectEntered.AddListener(StartGrab);
+            selectExited.AddListener(EndGrab);
         }
 
         protected override void OnDisable()
         {
             hoverEntered.RemoveListener(StartHover);
             hoverExited.RemoveListener(EndHover);
+            selectEntered.RemoveListener(StartGrab);
+            selectExited.RemoveListener(EndGrab);
             base.OnDisable();
         }
 
@@ -163,6 +180,17 @@ namespace Unity.XRContent.Interaction
                 else
                     SetButtonHeight(0.0f);
             }
+        }
+
+        void StartGrab(SelectEnterEventArgs args)
+        {
+            m_Interactor = args.interactorObject;
+            //UpdateSliderPosition();
+        }
+
+        void EndGrab(SelectExitEventArgs args)
+        {
+            m_Interactor = null;
         }
 
         public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -254,6 +282,7 @@ namespace Unity.XRContent.Interaction
             SetButtonHeight(minimumHeight);
         }
 
+
         void SetButtonHeight(float height)
         {
             //Debug.Log("Update Height");
@@ -261,8 +290,12 @@ namespace Unity.XRContent.Interaction
             if (m_Button == null)
                 return;
 
+            
+
             Vector3 newPosition = m_Button.localPosition;
-            newPosition.y = height;
+           
+                newPosition.y = height;
+           
             m_Button.localPosition = newPosition;
         }
 
